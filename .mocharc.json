@@ -1,0 +1,7 @@
+{
+  "require": "ts-node/register",
+  "extensions": ["ts", "tsx"],
+  "watch-files": ["src/ts/**/*.ts", "src/ts/**/*.tsx"],
+  "spec": "test/ts/**/*.spec.ts",
+  "parallel": true
+}
