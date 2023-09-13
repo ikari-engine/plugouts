@@ -1,10 +1,5 @@
 // import * as core from "@actions/core";
-import { PrepareContext, SuccessContext } from "semantic-release";
-
-export async function prepare(_?: unknown, context?: PrepareContext) {
-  if (context !== undefined)
-    context.logger.log(`Releasing version: ${context.nextRelease.version}`);
-}
+import { FailContext, SuccessContext } from "semantic-release";
 
 export async function success(
   _?: unknown,
@@ -15,7 +10,13 @@ export async function success(
   }
 }
 
+export async function fail(_?: unknown, context?: FailContext): Promise<void> {
+  if (context !== undefined) {
+    context.logger.log("output something");
+  }
+}
+
 export default {
-  prepare,
   success,
+  fail,
 };
