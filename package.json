@@ -4,7 +4,11 @@
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
+    "build": "tsc",
+    "build:watch": "npm run build -- --watch",
     "test": "mocha",
+    "test:watch": "npm run test -- --watch",
+    "test:coverage": "nyc npm run test",
     "commitlint": "commitlint --edit",
     "prepare": "husky install"
   },
