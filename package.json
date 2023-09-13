@@ -1,0 +1,34 @@
+{
+  "name": "@ikari-engine/semantic-release-gitout",
+  "version": "0.0.0-development.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "mocha",
+    "commitlint": "commitlint --edit",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikari-engine/semantic-release-gitout.git"
+  },
+  "keywords": [
+    "ikari-engine",
+    "ikari",
+    "semantic-release",
+    "github",
+    "actions",
+    "github-actions"
+  ],
+  "author": "Pedro Xavier Leite Cavadas",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/ikari-engine/semantic-release-gitout/issues"
+  },
+  "homepage": "https://github.com/ikari-engine/semantic-release-gitout#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "husky": "^8.0.3"
+  }
+}
