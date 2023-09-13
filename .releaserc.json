@@ -1,0 +1,18 @@
+{
+  "branches": [
+    "main",
+    {
+      "name": "development",
+      "channel": "beta",
+      "prerelease": "beta"
+    },
+    {
+      "name": "feature/*",
+      "prerelease": "development"
+    }
+  ],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@ikari-engine/semantic-release-gitout"
+  ]
+}
