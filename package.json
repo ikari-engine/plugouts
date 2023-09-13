@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "npm run build -- --watch",
+    "build:docs": "typedoc",
     "test": "mocha",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "nyc npm run test",
@@ -49,6 +50,9 @@
     "semantic-release": "^21.1.1",
     "sinon": "^15.2.0",
     "ts-node": "^10.9.1",
+    "typedoc": "^0.25.1",
+    "typedoc-github-wiki-theme": "^1.1.0",
+    "typedoc-plugin-markdown": "^3.16.0",
     "typescript": "^5.2.2"
   },
   "dependencies": {
