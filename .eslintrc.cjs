@@ -3,4 +3,7 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   plugins: ["@typescript-eslint"],
   root: true,
+  rules: {
+    "no-unused-vars": [2, { args: "all", argsIgnorePattern: "^_" }],
+  },
 };
