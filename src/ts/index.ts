@@ -13,7 +13,7 @@ export function success(
     nextRelease: {
       version: string;
     };
-  }
+  },
 ): void {
   core.setOutput("success", "true");
   core.setOutput("version", context.nextRelease.version);
@@ -22,8 +22,6 @@ export function success(
 /**
  * Called when the release fails.
  * Outputs variables to be used by other GitHub actions.
- *
- * @param _ - semantic-release configuration and context (unused)
  */
 export function fail(): void {
   core.setOutput("success", "false");
