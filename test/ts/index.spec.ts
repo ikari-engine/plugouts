@@ -10,18 +10,18 @@ describe("index", () => {
     },
   };
 
-  it(`#success(undefined, ${context})`, async () => {
+  it(`#success(undefined, ${JSON.stringify(context)})`, () => {
     const stub = sinon.stub(core, "setOutput");
-    await gitout.success(undefined, context);
+    gitout.success(undefined, context);
     assert.isTrue(stub.withArgs("success", "true").calledOnce);
     assert.isTrue(
       stub.withArgs("version", context.nextRelease.version).calledOnce
     );
   });
 
-  it("#fail(undefined, undefined)", async () => {
+  it("#fail()", () => {
     const stub = sinon.stub(core, "setOutput");
-    await gitout.fail(undefined, undefined);
+    gitout.fail();
     assert.isTrue(stub.withArgs("success", "false").calledOnce);
   });
 

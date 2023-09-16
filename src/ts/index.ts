@@ -4,17 +4,17 @@ import * as core from "@actions/core";
  * Called when the release succeeds.
  * Outputs variables to be used by other GitHub actions.
  *
- * @param _ - semantic-release configuration
+ * @param _ - semantic-release configuration (unused)
  * @param context - semantic-release context
  */
-export async function success(
+export function success(
   _: unknown,
   context: {
     nextRelease: {
       version: string;
     };
   }
-): Promise<void> {
+): void {
   core.setOutput("success", "true");
   core.setOutput("version", context.nextRelease.version);
 }
@@ -23,10 +23,9 @@ export async function success(
  * Called when the release fails.
  * Outputs variables to be used by other GitHub actions.
  *
- * @param _0 - semantic-release configuration
- * @param _1 - semantic-release context
+ * @param _ - semantic-release configuration and context (unused)
  */
-export async function fail(_0: unknown, _1: unknown): Promise<void> {
+export function fail(): void {
   core.setOutput("success", "false");
 }
 
