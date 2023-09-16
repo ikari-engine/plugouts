@@ -15,7 +15,7 @@ describe("index", () => {
     gitout.success(undefined, context);
     assert.isTrue(stub.withArgs("success", "true").calledOnce);
     assert.isTrue(
-      stub.withArgs("version", context.nextRelease.version).calledOnce
+      stub.withArgs("version", context.nextRelease.version).calledOnce,
     );
   });
 
