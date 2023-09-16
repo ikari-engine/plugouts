@@ -5,6 +5,27 @@ on:
     branches: ["main", "development"]
 
 jobs:
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Attempt to fix linting errors
+        run: |
+          npx eslint --fix test
+          npx eslint --fix src
+      - name: Check for linting errors
+        run: |
+          npx eslint test
+          npx eslint src
+
   build:
     strategy:
       matrix:
