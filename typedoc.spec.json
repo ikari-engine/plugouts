@@ -1,0 +1,8 @@
+{
+  "entryPoints": [],
+  "entryPointStrategy": "expand",
+  "githubPages": false,
+  "out": "docs",
+  "plugin": [],
+  "readme": "none"
+}

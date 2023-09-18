@@ -1,7 +1,6 @@
 {
+  "extends": ["./typedoc.spec.json"],
   "entryPoints": ["src/ts"],
-  "entryPointStrategy": "expand",
-  "githubPages": true,
-  "out": "docs",
-  "plugin": ["typedoc-plugin-markdown", "typedoc-github-wiki-theme"]
+  "plugin": ["typedoc-plugin-markdown", "."],
+  "entryDocument": null
 }
