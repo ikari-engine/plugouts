@@ -4,11 +4,12 @@
     {
       "name": "development",
       "channel": "beta",
-      "prerelease": "beta"
+      "prerelease": true
     },
     {
-      "name": "feature/*",
-      "prerelease": "development"
+      "name": "feature/setup",
+      "channel": "alpha",
+      "prerelease": "alpha"
     }
   ],
   "plugins": [
