@@ -22,7 +22,7 @@ export class JekyllTheme extends GithubWikiTheme {
     super(renderer);
     const entryDocument = renderer.application.options.getValue(
       "entryDocument",
-    )! as string;
+    ) as string;
     this.entryDocument = entryDocument.length > 0 ? entryDocument : "Home.md";
     const apiReferenceVersion = renderer.application.options.getValue(
       "apiReferenceVersion",
