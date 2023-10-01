@@ -1,7 +1,7 @@
-import * as core from "@actions/core";
-import * as sinon from "sinon";
-import fail from "../../../src/ts/semantic-release-plugin/fail";
 import { assert } from "chai";
+import * as sinon from "sinon";
+import * as core from "@actions/core";
+import fail from "../../../main/ts/semantic-release-plugin/fail";
 
 describe("#fail():", () => {
   it('should output `success` variable with value set to `"false"`', () => {

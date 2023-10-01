@@ -1,6 +1,6 @@
 import { assert } from "chai";
 import { Options } from "typedoc";
-import JekyllThemeOptionsReader from "../../../src/ts/typedoc-jekyll-theme/jekyll-theme-options-reader";
+import JekyllThemeOptionsReader from "../../../main/ts/typedoc-jekyll-theme/jekyll-theme-options-reader";
 
 describe("JekyllThemeOptionsReader#read", () => {
   it('should set the `"theme"` value to `themeName` if it\'s set to `"default"`', () => {

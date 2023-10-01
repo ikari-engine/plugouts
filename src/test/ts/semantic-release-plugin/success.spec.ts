@@ -1,7 +1,7 @@
-import * as core from "@actions/core";
-import * as sinon from "sinon";
 import { assert } from "chai";
-import { success } from "../../../src/ts/semantic-release-plugin/success";
+import * as sinon from "sinon";
+import * as core from "@actions/core";
+import { success } from "../../../main/ts/semantic-release-plugin/success";
 
 const context = {
   nextRelease: {

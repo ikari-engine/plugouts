@@ -1,8 +1,8 @@
 {
   "require": "ts-node/register",
   "extensions": ["ts", "tsx"],
-  "watch-files": ["src/ts/**/*.ts", "src/ts/**/*.tsx"],
-  "spec": "test/ts/**/*.spec.ts",
+  "watch-files": ["src/main/ts/**/*.ts", "src/main/ts/**/*.tsx"],
+  "spec": "src/test/ts/**/*.spec.ts",
   "parallel": true,
   "timeout": 5000
 }

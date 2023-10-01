@@ -15,32 +15,23 @@ import {
 export class JekyllTheme extends GithubWikiTheme {
   readonly #yamls = new Array<[string, FrontMatterVars]>();
 
-  readonly apiReferenceVersion?: string | undefined;
+  readonly apiReferenceVersion: string | undefined;
   readonly apiReferenceOrder: number;
 
   constructor(renderer: Renderer) {
     super(renderer);
-    const entryDocument =
-      renderer.application.options.getValue("entryDocument");
-    let sanitizedEntryDocument;
-    this.entryDocument =
-      typeof entryDocument === "string" &&
-      (sanitizedEntryDocument = entryDocument.trim()).length > 0
-        ? sanitizedEntryDocument
-        : "Home.md";
+    const entryDocument = renderer.application.options.getValue(
+      "entryDocument",
+    ) as string;
+    this.entryDocument = entryDocument.length > 0 ? entryDocument : "Home.md";
     const apiReferenceVersion = renderer.application.options.getValue(
       "apiReferenceVersion",
-    );
-    let sanitizedApiReferenceVersion;
+    ) as string;
     this.apiReferenceVersion =
-      typeof apiReferenceVersion === "string" &&
-      (sanitizedApiReferenceVersion = apiReferenceVersion.trim()).length > 0
-        ? sanitizedApiReferenceVersion
-        : undefined;
-    const apiReferenceOrder =
-      renderer.application.options.getValue("apiReferenceOrder");
-    this.apiReferenceOrder =
-      typeof apiReferenceOrder === "number" ? apiReferenceOrder : 0;
+      apiReferenceVersion.length > 0 ? apiReferenceVersion : undefined;
+    this.apiReferenceOrder = renderer.application.options.getValue(
+      "apiReferenceOrder",
+    ) as number;
     this.stopListening(this.owner, RendererEvent.END);
     this.listenTo(this.owner, {
       [PageEvent.END]: this.onJekyllPageEnd.bind(this),
@@ -85,6 +76,11 @@ export class JekyllTheme extends GithubWikiTheme {
       fs.writeFileSync(filePath, outputContent);
     }
   }
+
+  /* private static trimOrDefault(value: string, defaultValue: string): string {
+    const trimmedValue = value.trim();
+    return trimmedValue.length > 0 ? trimmedValue : defaultValue;
+  } */
 }
 
 export default JekyllTheme;

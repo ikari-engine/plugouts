@@ -1,9 +1,9 @@
-import { Application, Options, Renderer } from "typedoc";
-import { assert } from "chai";
 import sinon from "sinon";
-import { load } from "../../../src/ts/typedoc-jekyll-theme/load";
-import JekyllTheme from "../../../src/ts/typedoc-jekyll-theme/jekyll-theme";
-import JekyllThemeOptionsReader from "../../../src/ts/typedoc-jekyll-theme/jekyll-theme-options-reader";
+import { assert } from "chai";
+import { Application, Options, Renderer } from "typedoc";
+import { load } from "../../../main/ts/typedoc-jekyll-theme/load";
+import JekyllTheme from "../../../main/ts/typedoc-jekyll-theme/jekyll-theme";
+import JekyllThemeOptionsReader from "../../../main/ts/typedoc-jekyll-theme/jekyll-theme-options-reader";
 
 // Write test to test load function
 describe("load", () => {

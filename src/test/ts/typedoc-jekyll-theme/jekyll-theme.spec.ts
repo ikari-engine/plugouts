@@ -2,9 +2,9 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { assert } from "chai";
-import { Application, Logger } from "typedoc";
+import { Application, Logger, PageEvent } from "typedoc";
 import { load as typedocMarkdownLoad } from "typedoc-plugin-markdown";
-import { load as typedocJekyllThemeLoad } from "../../../src/ts/typedoc-jekyll-theme/load";
+import { load as typedocJekyllThemeLoad } from "../../../main/ts/typedoc-jekyll-theme/load";
 
 describe("JekyllTheme", () => {
   // Setup paths
@@ -12,8 +12,6 @@ describe("JekyllTheme", () => {
     __dirname,
     "..",
     "..",
-    "..",
-    "test",
     "resources",
     "typedoc-jekyll-theme",
   );
@@ -96,6 +94,12 @@ describe("JekyllTheme", () => {
       // Assert files
       assert.lengthOf(files, expectedFiles.length);
       assert.isTrue(files.every((file) => expectedFiles.includes(file)));
+
+      // Test conditional on PageEvent.END
+      application.renderer.trigger(
+        PageEvent.END,
+        new PageEvent("event.md", undefined),
+      );
 
       // Read content of each file
       const fileContents = new Map(
