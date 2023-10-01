@@ -1,0 +1,5 @@
+{
+  "extends": ["../../../../typedoc.spec.json"],
+  "entryPoints": "../ts/single-script",
+  "entryDocument": null
+}
