@@ -1,5 +1,5 @@
 {
-  "src/test/**/ts/**/*": ["eslint --fix", "prettier --write --ignore-unknown"],
-  "src/main/**/ts/**/*": ["eslint --fix", "prettier --write --ignore-unknown"],
+  "src/test/**/*": ["eslint --fix", "prettier --write --ignore-unknown"],
+  "src/main/**/*": ["eslint --fix", "prettier --write --ignore-unknown"],
   "./*": ["prettier --write --ignore-unknown"]
 }
