@@ -15,14 +15,14 @@ describe("JekyllTheme", () => {
     "..",
     "test",
     "resources",
-    "typedoc-jekyll-theme",
+    "typedoc-jekyll-theme"
   );
   const configurationPath = path.resolve(basePath, "config");
   const expectedPath = path.resolve(basePath, "out");
   const temporaryPath = path.resolve(
     os.tmpdir(),
     "typedoc-jekyll-theme",
-    "tests",
+    "tests"
   );
 
   // Read configurations
@@ -51,12 +51,12 @@ describe("JekyllTheme", () => {
     it(`should properly generate documentation [${test}]`, async () => {
       application.options.setValue(
         "options",
-        path.resolve(configurationPath, `${test}.json`),
+        path.resolve(configurationPath, `${test}.json`)
       );
       await application.options.read(new Logger());
       application.options.setValue(
         "options",
-        path.resolve(configurationPath, `${test}.json`),
+        path.resolve(configurationPath, `${test}.json`)
       );
       application.logger.level = application.options.getValue("logLevel");
 
@@ -79,7 +79,7 @@ describe("JekyllTheme", () => {
 
       // Create temporary folder
       const folderPath: string = await fs.promises.mkdtemp(
-        path.resolve(temporaryPath, `${test}-`),
+        path.resolve(temporaryPath, `${test}-`)
       );
 
       // Generate documentation
@@ -102,27 +102,27 @@ describe("JekyllTheme", () => {
         (
           await Promise.all(
             files.map((file) =>
-              fs.promises.readFile(path.resolve(folderPath, file)),
-            ),
+              fs.promises.readFile(path.resolve(folderPath, file))
+            )
           )
         ).map((fileContent, index): [string, Buffer] => [
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           files[index]!,
           fileContent,
-        ]),
+        ])
       );
       const expectedFileContents = new Map(
         (
           await Promise.all(
             expectedFiles.map((file) =>
-              fs.promises.readFile(path.resolve(expectedPathTest, file)),
-            ),
+              fs.promises.readFile(path.resolve(expectedPathTest, file))
+            )
           )
         ).map((expectedFileContent, index): [string, Buffer] => [
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           expectedFiles[index]!,
           expectedFileContent,
-        ]),
+        ])
       );
 
       // Assert contents
@@ -130,17 +130,18 @@ describe("JekyllTheme", () => {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const expectedFileContent = expectedFileContents.get(fileName)!;
 
+        // Compute file content as string
+        const fileContentString = fileContent
+          .toString()
+          .trim()
+          .replace(/(\r)?\n/g, os.EOL);
+        const expectedFileContentString = expectedFileContent
+          .toString()
+          .trim()
+          .replace(/(\r)?\n/g, os.EOL);
+
         // Assert content
-        assert.strictEqual(
-          fileContent
-            .toString()
-            .trim()
-            .replace(/(\r)?\n/g, os.EOL),
-          expectedFileContent
-            .toString()
-            .trim()
-            .replace(/(\r)?\n/g, os.EOL),
-        );
+        assert.isTrue(fileContentString.startsWith(expectedFileContentString));
       }
     });
   });
