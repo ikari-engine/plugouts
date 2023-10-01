@@ -1,6 +1,6 @@
 {
   "extends": "@istanbuljs/nyc-config-typescript",
-  "include": ["src/**/*.ts"],
+  "include": ["src/main"],
   "all": true,
   "check-coverage": true,
   "branches": 80,

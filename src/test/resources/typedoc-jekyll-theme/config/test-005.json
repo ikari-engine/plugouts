@@ -1,5 +1,5 @@
 {
-  "extends": ["../../../../typedoc.spec.json"],
+  "extends": ["../../../../../typedoc.spec.json"],
   "entryPoints": "../ts/multi-script",
   "entryDocument": null,
   "apiReferenceVersion": "v1.0.1"
