@@ -12,11 +12,14 @@ describe("JekyllTheme", () => {
     __dirname,
     "..",
     "..",
-    "resources",
+    "..",
+    "..",
+    "res",
+    "test",
     "typedoc-jekyll-theme",
   );
   const configurationPath = path.resolve(basePath, "config");
-  const expectedPath = path.resolve(basePath, "out");
+  const expectedPath = path.resolve(basePath, "template");
   const temporaryPath = path.resolve(
     os.tmpdir(),
     "typedoc-jekyll-theme",

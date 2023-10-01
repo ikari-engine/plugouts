@@ -1,0 +1,5 @@
+{
+  "extends": ["../../../../typedoc.spec.json"],
+  "entryPoints": "../ts/multi-script",
+  "entryDocument": "Entry.md"
+}
