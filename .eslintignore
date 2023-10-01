@@ -1,4 +1,6 @@
 # Generated folders
-
 dist/
 coverage/
+
+# ESLint configuration file
+.eslintrc.cjs
