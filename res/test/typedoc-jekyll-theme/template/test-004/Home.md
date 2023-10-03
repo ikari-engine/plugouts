@@ -1,6 +1,6 @@
 ---
 layout: "page"
-title: "@ikari-engine/semantic-release-gitout"
+title: "@ikari-engine/plugouts"
 parent: "API - Reference"
 has_toc: false
 has_children: true
