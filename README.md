@@ -1,1 +1,1 @@
-# semantic-release-gitout
+# plugouts

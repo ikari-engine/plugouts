@@ -1,5 +1,5 @@
 {
-  "name": "@ikari-engine/semantic-release-gitout",
+  "name": "@ikari-engine/plugouts",
   "version": "0.0.0-development.0",
   "description": "",
   "main": "./dist/index.js",
@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ikari-engine/semantic-release-gitout.git"
+    "url": "git+https://github.com/ikari-engine/plugouts.git"
   },
   "keywords": [
     "ikari-engine",
     "ikari",
-    "semantic-release",
+    "plugouts",
     "github",
     "actions",
     "github-actions"
@@ -29,9 +29,9 @@
   "author": "Pedro Xavier Leite Cavadas",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/ikari-engine/semantic-release-gitout/issues"
+    "url": "https://github.com/ikari-engine/plugouts/issues"
   },
-  "homepage": "https://github.com/ikari-engine/semantic-release-gitout#readme",
+  "homepage": "https://github.com/ikari-engine/plugouts#readme",
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",

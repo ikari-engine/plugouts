@@ -3,7 +3,7 @@ import { Options, OptionsReader } from "typedoc";
 export class JekyllThemeOptionsReader implements OptionsReader {
   static readonly themeName = "jekyll";
 
-  name = "@ikari-engine/semantic-release-gitout";
+  name = "@ikari-engine/plugouts";
   readonly order = 900;
   readonly supportsPackages = false;
 

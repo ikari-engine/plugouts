@@ -12,8 +12,5 @@
       "prerelease": "alpha"
     }
   ],
-  "plugins": [
-    "@semantic-release/commit-analyzer",
-    "@ikari-engine/semantic-release-gitout"
-  ]
+  "plugins": ["@semantic-release/commit-analyzer", "@ikari-engine/plugouts"]
 }
