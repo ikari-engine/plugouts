@@ -82,12 +82,12 @@ jobs:
           echo "---" > docs/index.md
           echo "layout: page" >> docs/index.md
           echo "title: Overview" >> docs/index.md
-          echo "nav_order: 3" >> docs/index.md
+          echo "nav_order: 1" >> docs/index.md
           echo "---" >> docs/index.md
           echo "" >> docs/index.md
           echo "# Overview" >> docs/index.md
           echo "" >> docs/index.md
-          cat src/docs/README.md >> docs/index.md
+          cat src/README.md >> docs/index.md
 
           echo "---" > docs/CHANGELOG.md
           echo "layout: page" >> docs/CHANGELOG.md
