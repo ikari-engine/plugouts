@@ -1,3 +1,11 @@
+# [1.0.0-development.2](https://github.com/ikari-engine/plugouts/compare/v1.0.0-development.1...v1.0.0-development.2) (2023-10-05)
+
+
+### Bug Fixes
+
+* **docs:** docs deployment fix ([8c647dc](https://github.com/ikari-engine/plugouts/commit/8c647dc31d3a61aff8646dc6b31b6932fcad1b70))
+* **style:** changelog ([17778ff](https://github.com/ikari-engine/plugouts/commit/17778ffc492fa35881ffccd77e7bc5e91de307a2))
+
 # 1.0.0-development.1 (2023-10-05)
 
 ### Bug Fixes
