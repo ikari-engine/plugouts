@@ -1,10 +1,9 @@
 # [1.0.0-development.3](https://github.com/ikari-engine/plugouts/compare/v1.0.0-development.2...v1.0.0-development.3) (2023-10-05)
 
-
 ### Bug Fixes
 
-* **docs-gen:** fix generation of docs ([eb281da](https://github.com/ikari-engine/plugouts/commit/eb281da4d9522ed1deea61f03cb97d1896769874))
-* **style:** fix style issues ([ec81153](https://github.com/ikari-engine/plugouts/commit/ec8115384d128595cd6195841d8ca462f632ec15))
+- **docs-gen:** fix generation of docs ([eb281da](https://github.com/ikari-engine/plugouts/commit/eb281da4d9522ed1deea61f03cb97d1896769874))
+- **style:** fix style issues ([ec81153](https://github.com/ikari-engine/plugouts/commit/ec8115384d128595cd6195841d8ca462f632ec15))
 
 # [1.0.0-development.2](https://github.com/ikari-engine/plugouts/compare/v1.0.0-development.1...v1.0.0-development.2) (2023-10-05)
 

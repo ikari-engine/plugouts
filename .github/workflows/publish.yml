@@ -99,6 +99,7 @@ jobs:
           echo "" >> docs/CHANGELOG.md
           cat src/CHANGELOG.md >> docs/CHANGELOG.md
       - name: Commit Documentation
+        working-directory: ./docs
         run: |-
           git config --global user.name "tensei-engine"
           git config --global user.email "144497878+tensei-engine@users.noreply.github.com"
