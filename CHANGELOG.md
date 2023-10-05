@@ -1,3 +1,11 @@
+# [1.0.0-development.4](https://github.com/ikari-engine/plugouts/compare/v1.0.0-development.3...v1.0.0-development.4) (2023-10-05)
+
+
+### Bug Fixes
+
+* **action:** fix action ([02a142b](https://github.com/ikari-engine/plugouts/commit/02a142bc11a0793a3ee8af230853c6543767fbf4))
+* **action:** remove `--global` git flag ([b74e36f](https://github.com/ikari-engine/plugouts/commit/b74e36f4b5ee9624ac30a3b39b43a990a924c4fd))
+
 # [1.0.0-development.3](https://github.com/ikari-engine/plugouts/compare/v1.0.0-development.2...v1.0.0-development.3) (2023-10-05)
 
 ### Bug Fixes
