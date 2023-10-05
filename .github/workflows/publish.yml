@@ -101,8 +101,8 @@ jobs:
       - name: Commit Documentation
         working-directory: ./docs
         run: |-
-          git config --global user.name "tensei-engine"
-          git config --global user.email "144497878+tensei-engine@users.noreply.github.com"
+          git config user.name "tensei-engine"
+          git config user.email "144497878+tensei-engine@users.noreply.github.com"
           git add docs/reference/${{ needs.publish.outputs.version }}
           git add docs/index.md
           git add docs/CHANGELOG.md
