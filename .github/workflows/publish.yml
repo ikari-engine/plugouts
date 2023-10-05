@@ -68,7 +68,7 @@ jobs:
       - name: Build Plugin
         run: npm --prefix src run build
       - name: Build Documentation
-        run: npm --prefix src run build:docs
+        run: npm --prefix src run build:docs -- --apiReferenceVersion ${{ needs.publish.outputs.version }} --apiReferenceOrder $(ls | wc -l)
       - name: Checkout Documentation
         uses: actions/checkout@v4
         with:
