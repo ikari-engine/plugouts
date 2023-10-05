@@ -65,6 +65,8 @@ jobs:
         run: npm --prefix src ci
       - name: Verify integrity
         run: npm --prefix src audit signatures
+      - name: Build Plugin
+        run: npm --prefix src run build
       - name: Build Documentation
         run: npm --prefix src run build:docs
       - name: Checkout Documentation
