@@ -101,6 +101,8 @@ jobs:
       - name: Commit Documentation
         working-directory: ./docs
         run: |-
+          pwd
+          ls -la .
           git config user.name "tensei-engine"
           git config user.email "144497878+tensei-engine@users.noreply.github.com"
           git add docs/reference/${{ needs.publish.outputs.version }}
