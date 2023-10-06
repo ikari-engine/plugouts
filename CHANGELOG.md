@@ -1,3 +1,10 @@
+# [1.0.0-development.13](https://github.com/ikari-engine/plugouts/compare/v1.0.0-development.12...v1.0.0-development.13) (2023-10-06)
+
+
+### Bug Fixes
+
+* **style:** fix ([0f86a96](https://github.com/ikari-engine/plugouts/commit/0f86a9668943e48b503346c0ab5d3c094a78ce7d))
+
 # [1.0.0-development.12](https://github.com/ikari-engine/plugouts/compare/v1.0.0-development.11...v1.0.0-development.12) (2023-10-06)
 
 ### Bug Fixes
