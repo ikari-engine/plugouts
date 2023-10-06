@@ -1,9 +1,8 @@
 # [1.0.0-development.10](https://github.com/ikari-engine/plugouts/compare/v1.0.0-development.9...v1.0.0-development.10) (2023-10-06)
 
-
 ### Bug Fixes
 
-* **actions:** fix github action ([5deff94](https://github.com/ikari-engine/plugouts/commit/5deff94545061dfb1c8d0713d7b4a883772025a9))
+- **actions:** fix github action ([5deff94](https://github.com/ikari-engine/plugouts/commit/5deff94545061dfb1c8d0713d7b4a883772025a9))
 
 # [1.0.0-development.9](https://github.com/ikari-engine/plugouts/compare/v1.0.0-development.8...v1.0.0-development.9) (2023-10-06)
 

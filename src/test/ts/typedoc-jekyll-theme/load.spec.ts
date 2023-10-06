@@ -6,7 +6,7 @@ import JekyllTheme from "../../../main/ts/typedoc-jekyll-theme/jekyll-theme";
 import JekyllThemeOptionsReader from "../../../main/ts/typedoc-jekyll-theme/jekyll-theme-options-reader";
 
 // Write test to test load function
-describe("load", () => {
+describe("#load", () => {
   it("should define the Jekyll theme", async () => {
     const application = sinon.createStubInstance(Application);
     application.options = new Options();
