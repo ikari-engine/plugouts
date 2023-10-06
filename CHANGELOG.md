@@ -1,3 +1,10 @@
+# [1.0.0-development.11](https://github.com/ikari-engine/plugouts/compare/v1.0.0-development.10...v1.0.0-development.11) (2023-10-06)
+
+
+### Features
+
+* **plugin:** added prettier for changelog release ([d4b387f](https://github.com/ikari-engine/plugouts/commit/d4b387f759ce9811ea6d2e8d6be762982831f794))
+
 # [1.0.0-development.10](https://github.com/ikari-engine/plugouts/compare/v1.0.0-development.9...v1.0.0-development.10) (2023-10-06)
 
 ### Bug Fixes
