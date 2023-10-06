@@ -1,3 +1,11 @@
+# [1.0.0-development.12](https://github.com/ikari-engine/plugouts/compare/v1.0.0-development.11...v1.0.0-development.12) (2023-10-06)
+
+
+### Bug Fixes
+
+* **release:** fix deployment ([bf8ff13](https://github.com/ikari-engine/plugouts/commit/bf8ff13f62a51bd00255c6559d28e8c2dfdf3f94))
+* **style:** fix style issues ([5a591b3](https://github.com/ikari-engine/plugouts/commit/5a591b3fd47053c984632ccfcac0c0371791c63e))
+
 # [1.0.0-development.11](https://github.com/ikari-engine/plugouts/compare/v1.0.0-development.10...v1.0.0-development.11) (2023-10-06)
 
 ### Features
