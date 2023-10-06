@@ -22,10 +22,9 @@ on:
       - auto_merge_disabled
     branches:
       - main
-      - development
 
 jobs:
-  prettier:
+  prettier_main:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -40,7 +39,7 @@ jobs:
       - name: Check linting errors
         run: npx prettier . --check
 
-  eslint:
+  eslint_main:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -55,7 +54,7 @@ jobs:
       - name: Check linting errors
         run: npx eslint .
 
-  build:
+  build_main:
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -74,7 +73,7 @@ jobs:
       - name: Build
         run: npm run build
 
-  test:
+  test_main:
     strategy:
       matrix:
         os: [ubuntu-latest]
