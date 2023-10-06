@@ -1,3 +1,11 @@
+# [1.0.0-development.8](https://github.com/ikari-engine/plugouts/compare/v1.0.0-development.7...v1.0.0-development.8) (2023-10-06)
+
+
+### Bug Fixes
+
+* **actions:** fix style ([0e7b040](https://github.com/ikari-engine/plugouts/commit/0e7b0406de84aa2c55330f07a024b614e187708b))
+* **actions:** fix validate ([8282bc5](https://github.com/ikari-engine/plugouts/commit/8282bc5aeb782d1811305d9a9e152f55967d67c2))
+
 # [1.0.0-development.7](https://github.com/ikari-engine/plugouts/compare/v1.0.0-development.6...v1.0.0-development.7) (2023-10-05)
 
 ### Bug Fixes
