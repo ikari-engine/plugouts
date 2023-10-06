@@ -1,0 +1,6 @@
+{
+  "extends": ["./typedoc.spec.json"],
+  "entryPoints": ["src/main/ts"],
+  "plugin": ["typedoc-plugin-markdown", "."],
+  "entryDocument": null
+}

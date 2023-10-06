@@ -1,0 +1,116 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - main
+      - development
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: github-actions-publish
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
+    outputs:
+      VERSION: ${{ steps.publish.outputs.version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Verify integrity
+        run: npm audit signatures
+      - name: Build
+        run: npm run build
+      - name: Link Self
+        run: |-
+          npm link
+          npm link @ikari-engine/plugouts
+      - name: Publish
+        id: publish
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.SERVICE_ACCOUNT_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-docs:
+    needs: publish
+    runs-on: ubuntu-latest
+    environment: github-actions-publish
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          path: src
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: "npm"
+          cache-dependency-path: src/package-lock.json
+      - name: Install dependencies
+        run: npm --prefix src ci
+      - name: Verify integrity
+        run: npm --prefix src audit signatures
+      - name: Build Plugin
+        run: npm --prefix src run build
+      - name: Build Documentation
+        run: npm --prefix src run build:docs -- --apiReferenceVersion ${{ needs.publish.outputs.version }} --apiReferenceOrder $(ls docs/reference | wc -l)
+      - name: Checkout Documentation
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          path: docs
+          ref: gh-pages
+      - name: Copy Documentation
+        run: |-
+          cp -r src/docs docs/reference/${{ needs.publish.outputs.version }}
+
+          echo "---" > docs/index.md
+          echo "layout: page" >> docs/index.md
+          echo "title: Overview" >> docs/index.md
+          echo "nav_order: 1" >> docs/index.md
+          echo "---" >> docs/index.md
+          echo "" >> docs/index.md
+          echo "# Overview" >> docs/index.md
+          echo "" >> docs/index.md
+          cat src/README.md >> docs/index.md
+
+          echo "---" > docs/CHANGELOG.md
+          echo "layout: page" >> docs/CHANGELOG.md
+          echo "title: CHANGELOG" >> docs/CHANGELOG.md
+          echo "nav_order: 3" >> docs/CHANGELOG.md
+          echo "---" >> docs/CHANGELOG.md
+          echo "" >> docs/CHANGELOG.md
+          echo "# CHANGELOG" >> docs/CHANGELOG.md
+          echo "" >> docs/CHANGELOG.md
+          cat src/CHANGELOG.md >> docs/CHANGELOG.md
+      - name: Commit Documentation
+        working-directory: ./docs
+        run: |-
+          git config user.name "tensei-engine"
+          git config user.email "144497878+tensei-engine@users.noreply.github.com"
+          git add reference/${{ needs.publish.outputs.version }}
+          git add index.md
+          git add CHANGELOG.md
+          git commit -m "chore(docs): update documentation for version ${{ needs.publish.outputs.version }}"
+      - name: Push Documentation
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.SERVICE_ACCOUNT_TOKEN }}
+          branch: gh-pages
+          force: true
+          directory: docs
