@@ -9,7 +9,7 @@ const context = {
   },
 };
 
-describe(`#success(undefined, ${JSON.stringify(context)})`, () => {
+describe(`#success`, () => {
   it(`should output \`success\` and \`version\` variables with values set to \`"true"\` and \`"${context.nextRelease.version}"\``, () => {
     const stub = sinon.stub(core, "setOutput");
     success(undefined, context);
